@@ -29,6 +29,9 @@
     "mkdirp": "^0.5.1",
     "mocha": "^2.3.4"
   },
+  "Dependencies": {
+    "mkdirp": "^0.5.1"
+  },
   "bugs": {
     "url": "https://github.com/Auto-ruuter/Ruuter/issues"
   },
