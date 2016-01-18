@@ -7,17 +7,13 @@ const goodHead = require(__dirname + '/../lib/good-head');
 var router = new Router();
 var requestCount = 0;
 
-router.get('/', function(req, res) {
-  goodHead(res, 200, 'text/plain', 'test stuff yee');
-  // res.writeHead(200, {'Content-Type': 'text/plain'});
-  // res.write('Hello world ');
+router.get('/test1', function(req, res) {
+  goodHead(res, 200, 'text/plain', 'test stuff 1 ');
   return res.end();
 });
 
-router.get('/greet', function(req, res) {
-  goodHead(res, 200, 'text/plain', 'Hello user ');
-  // res.writeHead(200, {'Content-Type': 'text/plain'});
-  // res.write('Hello user ');
+router.get('/test2', function(req, res) {
+  goodHead(res, 200, 'application/json', 'test stuff 2');
   return res.end();
 });
 
