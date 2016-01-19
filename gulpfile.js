@@ -1,5 +1,10 @@
 var gulp = require('gulp');
+var eslint = require('gulp-eslint');
+var mocha = require('gulp-mocha');
 var gulpLoadPlugins = require('gulp-load-plugins');
+
+var testFiles = ['./test/*test.js']
+
 var plugins = gulpLoadPlugins();
 gulp.task('default', ['eslint_check', 'mocha_tests', 'watch']);
 gulp.task('eslint_check', function() {
@@ -34,7 +39,7 @@ gulp.task('eslint_check', function() {
   )).pipe(plugins.eslint.format()).pipe(plugins.eslint.failAfterError());
 });
 gulp.task('mocha_tests', function () {
-  return gulp.src('test/*.js', {read: false}).pipe(plugins.mocha({reporter: 'spec'}));
+  return gulp.src(testFiles, {read: false}).pipe(plugins.mocha({reporter: 'spec'}));
 });
 gulp.task('watch', function() {
   gulp.watch(['**/*.js', '!package.json', '!node_modules/**', '!dist/*.js'], ['eslint_check', 'mocha_tests']);
