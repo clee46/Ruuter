@@ -3,7 +3,7 @@ var eslint = require('gulp-eslint');
 var mocha = require('gulp-mocha');
 var gulpLoadPlugins = require('gulp-load-plugins');
 
-var testFiles = ['./test/*test.js']
+var testFiles = ['./test/*test.js'];
 
 var plugins = gulpLoadPlugins();
 gulp.task('default', ['eslint_check', 'mocha_tests', 'watch']);
@@ -11,7 +11,7 @@ gulp.task('eslint_check', function() {
   return gulp.src(['**/*.js','!node_modules/**','!dist/*.js']).pipe(plugins.eslint(
     {
       'settings': {
-        'ecmascript': 5
+        'ecmascript': 6
       },
       'ecmaFeatures': {
       },

@@ -5,7 +5,7 @@ chai.use(chaiHttp);
 var fs = require('fs');//eslint-disable-line
 var request = chai.request;
 
-describe('goodHead functionality', () => {
+describe('goodHead functionality', function() {
 
   before(function(done) {
     this.server = require(__dirname + '/test_server');
@@ -16,7 +16,7 @@ describe('goodHead functionality', () => {
     this.server.close(done);
   });
 
-  it('should get a response in plain text', (done) => {
+  it('should get a response in plain text', function(done) {
     request('localhost:3000')
       .get('/test1')
       .end((err, res) => {
@@ -27,7 +27,7 @@ describe('goodHead functionality', () => {
       });
   });
 
-  it('should get a response in JSON', (done) => {
+  it('should get a response in JSON', function(done) {
     request('localhost:3000')
       .get('/test2')
       .end((err, res) => {
@@ -38,13 +38,13 @@ describe('goodHead functionality', () => {
       });
   });
 
-  it('should receive a 404 response in JSON', (done) => {
+  it('should receive a 404 response in plain text', function(done) {
     request('localhost:3000')
       .get('/doesnotexist')
       .end((err, res) => {
         expect(err).to.eql(null);
         expect(res).to.have.status(404);
-        expect(res.text).to.eql('tester');
+        expect(res.text).to.eql('Page not found');
         done();
       });
   });
