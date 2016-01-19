@@ -5,7 +5,7 @@ chai.use(chaiHttp);
 var fs = require('fs');//eslint-disable-line
 var request = chai.request;
 
-describe('goodHead functionality', function() {
+describe('headMessage functionality', () => {
 
   before(function(done) {
     this.server = require(__dirname + '/test_server');
@@ -14,9 +14,10 @@ describe('goodHead functionality', function() {
 
   after(function(done) {
     this.server.close(done);
+    done();
   });
 
-  it('should get a response in plain text', function(done) {
+  it('should get a response in plain text', (done) => {
     request('localhost:3000')
       .get('/test1')
       .end((err, res) => {
@@ -27,7 +28,7 @@ describe('goodHead functionality', function() {
       });
   });
 
-  it('should get a response in JSON', function(done) {
+  it('should get a response in JSON', (done) => {
     request('localhost:3000')
       .get('/test2')
       .end((err, res) => {
@@ -38,7 +39,7 @@ describe('goodHead functionality', function() {
       });
   });
 
-  it('should receive a 404 response in plain text', function(done) {
+  it('should receive a 404 response in plain text', (done) => {
     request('localhost:3000')
       .get('/doesnotexist')
       .end((err, res) => {
