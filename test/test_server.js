@@ -1,4 +1,3 @@
-/*
 const Router = require(__dirname + '/../ruuter');
 const http = require('http');
 const fs = require('fs');
@@ -34,4 +33,3 @@ router.post('/data/', function(req, res) {
 
 var server = http.createServer(router.route());
 server.listen(3000, () => console.log('server up'));//eslint-disable-line
-*/
