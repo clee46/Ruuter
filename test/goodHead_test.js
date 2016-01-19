@@ -14,7 +14,6 @@ describe('headMessage functionality', () => {
 
   after(function(done) {
     this.server.close(done);
-    done();
   });
 
   it('should get a response in plain text', (done) => {
