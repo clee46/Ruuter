@@ -9,18 +9,25 @@ npm install ruuter
 # Getting Started
 Ruuter consists of an HTTP router and helpful methods that streamline writing response headers and expand options for writing data to a new file. Here is the simplest way to implement Ruuter:
 
-```javascript
-const ruuter = require('ruuter');
-var router = new ruuter.Router();
-```
-
 ### Creating a new router: `.Router()`
-The Router constructor function initializes a basic router object, and defines basic http methods (GET, POST, PUSH, DELETE, etc.)  to be contained within the main object.
-The following example demonstrates typical implementation of this function.
+The Router constructor function initializes a basic router object.
+The following example demonstrates typical implementation.
 
 ```javascript
 var ruuter = require('ruuter');
-var Router = ruuter.Router();
+var router = new ruuter.Router();
+```
+
+### Setting Up Routes
+Each Router instance defines basic http methods (GET, POST, PUSH, DELETE, etc.)  to be contained within the main object.
+
+The following example demonstrates how to create a create a `GET` request to `/test1`:
+```javascript
+var router = new ruuter.Router();
+router.get('/test1', function (req, res) {
+  headMessage(res, 200, 'text/plain', 'test stuff 1 ');
+  return res.end();
+});
 ```
 
 ### Writing a new file: `.headMessage(status, Content-Type, Status-Message)`
