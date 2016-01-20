@@ -2,7 +2,7 @@ var chai = require('chai');
 var expect = require('chai').expect;
 var chaiHttp = require('chai-http');
 chai.use(chaiHttp);
-var fs = require('fs');//eslint-disable-line
+var fs = require('fs'); //eslint-disable-line
 var request = chai.request;
 
 describe('headMessage functionality', () => {
@@ -13,7 +13,8 @@ describe('headMessage functionality', () => {
   });
 
   after(function(done) {
-    this.server.close(done);
+    this.server.close();
+    done();
   });
 
   it('should get a response in plain text', (done) => {
