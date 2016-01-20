@@ -6,7 +6,7 @@ var headMessage = require(__dirname + '/../lib/headMessage');
 
 var router = new Router();
 var requestCount = 0;
-console.log(router);
+// console.log(router);
 
 router.get('/test1', function (req, res) {
   headMessage(res, 200, 'text/plain', 'test stuff 1 ');
