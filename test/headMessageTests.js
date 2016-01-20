@@ -1,23 +1,16 @@
-var chai = require('chai');
-var expect = require('chai').expect;
-var chaiHttp = require('chai-http');
+var chai = require('chai'), expect = require('chai').expect, chaiHttp = require('chai-http'), fs = require('fs');
 chai.use(chaiHttp);
-var fs = require('fs'); //eslint-disable-line
 var request = chai.request;
-
-describe('headMessage functionality', () => {
-
+describe('headMessage(res, status, ctype, bodyMsg)', () => {
   before(function(done) {
-    this.server = require(__dirname + '/test_server');
+    this.server = require(__dirname + '/headMessageTestsTestServer');
     done();
   });
-
   after(function(done) {
     this.server.close();
     done();
   });
-
-  it('should get a response in plain text', (done) => {
+  it('Should return a response in plain text.', (done) => {
     request('localhost:3000')
       .get('/test1')
       .end((err, res) => {
@@ -27,8 +20,7 @@ describe('headMessage functionality', () => {
         done();
       });
   });
-
-  it('should get a response in JSON', (done) => {
+  it('Should return a response in JSON.', (done) => {
     request('localhost:3000')
       .get('/test2')
       .end((err, res) => {
@@ -38,8 +30,7 @@ describe('headMessage functionality', () => {
         done();
       });
   });
-
-  it('should receive a 404 response in plain text', (done) => {
+  it('Should return a 404 response in plain text.', (done) => {
     request('localhost:3000')
       .get('/doesnotexist')
       .end((err, res) => {
@@ -49,5 +40,4 @@ describe('headMessage functionality', () => {
         done();
       });
   });
-
 });
