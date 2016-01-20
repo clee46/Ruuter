@@ -1,7 +1,7 @@
 {
   "name": "ruuter",
-  "version": "0.0.0",
-  "description": "A framework to make routing in Node easier",
+  "version": "1.0.2",
+  "description": "A basic framework for creating an HTTP server with routes.  Easily write files and header messages upon requests.",
   "main": "ruuter.js",
   "directories": {
     "test": "test"
@@ -18,23 +18,21 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-http": "^1.0.0",
-    "gulp": "^3.9.0",
-    "gulp-bump": "^1.0.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-eslint": "^1.1.1",
-    "gulp-header": "^1.7.1",
-    "gulp-load-plugins": "^1.2.0",
-    "gulp-mocha": "^2.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.1",
     "mkdirp": "^0.5.1",
     "mocha": "^2.3.4"
   },
-  "Dependencies": {
+  "dependencies": {
     "mkdirp": "^0.5.1"
   },
   "bugs": {
     "url": "https://github.com/Auto-ruuter/Ruuter/issues"
   },
-  "homepage": "https://github.com/Auto-ruuter/Ruuter#readme"
+  "homepage": "https://github.com/Auto-ruuter/Ruuter#readme",
+  "readmeFilename": "README.md",
+  "bin": {
+    "ruuter": "ruuter.js"
+  },
+  "engines": {
+    "node": "*"
+  }
 }
