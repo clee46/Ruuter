@@ -11,7 +11,6 @@ Ruuter consists of an HTTP router and helpful methods that streamline writing re
 
 ```javascript
 const ruuter = require('ruuter');
-
 var router = new ruuter.Router();
 ```
 
@@ -47,16 +46,20 @@ The following example demonstrates proper use of this function:
 var ruuter = require('ruuter');
 var fileNamer = ruuter.writeFile(path, ext, data,options[,callback]);
 ```
-options is an object or string with the following defaults:
+`options` is an object or string with the following defaults:
 
 ```
-{ namingConvention: null,
+{
+  namingConvention: null,
   overwrite: null
 }
 ```
 
-When options.namingConvention equals ‘date’, the new file will be named using the current date, with the format: year-month-day (e.g. 2016-1-3).    
-When options.namingConvention equals ‘time’, the new file will be named using the current time, with the format: hours-minutes-seconds-milliseconds (e.g. 15-8-3-5)).    
-When options.namingConvention equals ‘dateTime’, the new file will be named using the current date and time (e.g. 2016-1-3_15-8-3-5).    
-When options.overwrite equals true, the new file will overwrite any existing file with the same name.
-When options.overwrite equals false, the new file will not overwrite any existing file with the same name.
+When `options.namingConvention` equals ``‘date’``, the new file will be named using the current date, with the format: year-month-day (e.g. 2016-1-3).  
+
+When `options.namingConvention` equals ``‘time’``, the new file will be named using the current time, with the format: hours-minutes-seconds-milliseconds (e.g. 15-8-3-5)).    
+When `options.namingConvention` equals ``‘dateTime’``, the new file will be named using the current date and time (e.g. 2016-1-3_15-8-3-5).  
+
+When `options.overwrite` equals `true`, the new file will overwrite any existing file with the same name.
+
+When `options.overwrite` equals `false`, the new file will not overwrite any existing file with the same name.
