@@ -30,28 +30,28 @@ router.get('/test1', function (req, res) {
 });
 ```
 
-### Writing a new file: `.headMessage(status, Content-Type, Status-Message)`
+### Writing a server response: `.headMessage(res, status, Content-Type, Status-Message)`
 ```
 ruuter.headMessage(res, status, Content-Type, Status-Message);
 ```
 
-Use the ruuter headMessage function to easily take in the status, content type, and status message of your REST requests as arguments. Once created, the function inserts itself into
+The ruuter headMessage function takes the server response, status code, content type, and status message as arguments. The function takes these arguments and writes the response header and message automatically.
 
-The following example demonstrates the syntax for this function.
+The following example demonstrates proper usage of this function.
 
 ```javascript
 var ruuter = require('ruuter');
 var headMessage = ruuter.headMessage(res, 200, 'plain/text', 'Body message')
 ```
 
-### Writing a new file: `.writeFile(path, ext, data,options[,callback])`
+### Writing a new file: `.writeFile(path, ext, data, options[,callback])`
 The ruuter writeFile function offers users a variety of options for naming and saving new files.
 
 The following example demonstrates proper use of this function:
 
 ```javascript
 var ruuter = require('ruuter');
-var fileNamer = ruuter.writeFile(path, ext, data,options[,callback]);
+var fileNamer = ruuter.writeFile(path, ext, data, options[,callback]);
 ```
 `options` is an object or string with the following defaults:
 
@@ -65,6 +65,7 @@ var fileNamer = ruuter.writeFile(path, ext, data,options[,callback]);
 When `options.namingConvention` equals ``‘date’``, the new file will be named using the current date, with the format: year-month-day (e.g. 2016-1-3).  
 
 When `options.namingConvention` equals ``‘time’``, the new file will be named using the current time, with the format: hours-minutes-seconds-milliseconds (e.g. 15-8-3-5)).    
+
 When `options.namingConvention` equals ``‘dateTime’``, the new file will be named using the current date and time (e.g. 2016-1-3_15-8-3-5).  
 
 When `options.overwrite` equals `true`, the new file will overwrite any existing file with the same name.
